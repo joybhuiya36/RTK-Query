@@ -45,7 +45,9 @@
   }
   &__button {
     width: 25px !important;
+    min-width: 25px !important;
     height: 20px !important;
+    min-height: 20px !important;
     padding: unset;
     font-size: 11px;
     font-weight: 600;
@@ -60,10 +62,17 @@
 .ant-spin-dot-holder {
   color: rgb(21, 187, 82) !important;
 }
-.ant-checkbox-checked .ant-checkbox-inner {
-  background-color: rgb(21, 187, 82);
-  border-color: rgb(21, 187, 82);
-  border-radius: 40%;
+.ant-checkbox-checked {
+  & + span {
+    .ant-typography {
+      text-decoration: line-through;
+    }
+  }
+  .ant-checkbox-inner {
+    background-color: rgb(21, 187, 82);
+    border-color: rgb(21, 187, 82);
+    border-radius: 40%;
+  }
 }
 
 .ant-checkbox-wrapper:hover .ant-checkbox-checked .ant-checkbox-inner {

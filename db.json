@@ -1,19 +1,19 @@
 {
-    "tasks": [
-        {
-            "id": 1,
-            "title": "Project setup for RTK-query",
-            "isCompleted": true
-        },
-        {
-            "id": 2,
-            "title": "Learning RTK-query",
-            "isCompleted": false
-        },
-        {
-            "id": 2,
-            "title": "Implement RTK-query in a project",
-            "isCompleted": false
-        }
-    ]
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Project setup for RTK-query",
+      "isCompleted": true
+    },
+    {
+      "id": "2",
+      "title": "Learning RTK-query",
+      "isCompleted": false
+    },
+    {
+      "id": "3",
+      "title": "Implement RTK-query in a project",
+      "isCompleted": false
+    }
+  ]
 }

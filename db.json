@@ -8,11 +8,16 @@
     {
       "id": "2",
       "title": "Learning RTK-query",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "id": "3",
       "title": "Implement RTK-query in a project",
+      "isCompleted": true
+    },
+    {
+      "id": "4",
+      "title": "Make a presentation slide on up-skill",
       "isCompleted": false
     }
   ]

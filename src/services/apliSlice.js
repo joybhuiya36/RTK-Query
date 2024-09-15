@@ -19,6 +19,19 @@ export const api = createApi({
         body: task,
       }),
       invalidatesTags: ["Tasks"],
+      async onQueryStarted(task, { dispatch, queryFulfilled }) {
+        const patchResult = dispatch(
+          api.util.updateQueryData("getTasks", undefined, (taskList) => {
+            taskList.unshift({ ...task });
+          })
+        );
+
+        try {
+          await queryFulfilled;
+        } catch {
+          patchResult.undo();
+        }
+      },
     }),
 
     updateTask: builder.mutation({
@@ -28,6 +41,23 @@ export const api = createApi({
         body: updatedTask,
       }),
       invalidatesTags: ["Tasks"],
+      async onQueryStarted(
+        { id, ...updatedTask },
+        { dispatch, queryFulfilled }
+      ) {
+        const patchResult = dispatch(
+          api.util.updateQueryData("getTasks", undefined, (taskList) => {
+            const index = taskList?.findIndex((task) => task?.id == id);
+            taskList[index] = { ...taskList[index], ...updatedTask };
+          })
+        );
+
+        try {
+          await queryFulfilled;
+        } catch {
+          patchResult.undo();
+        }
+      },
     }),
 
     deleteTask: builder.mutation({
@@ -36,6 +66,20 @@ export const api = createApi({
         method: "DELETE",
       }),
       invalidatesTags: ["Tasks"],
+      async onQueryStarted(id, { dispatch, queryFulfilled }) {
+        const patchResult = dispatch(
+          api.util.updateQueryData("getTasks", undefined, (taskList) => {
+            const index = taskList?.findIndex((task) => task?.id == id);
+            taskList.splice(index, 1);
+          })
+        );
+
+        try {
+          await queryFulfilled;
+        } catch {
+          patchResult.undo();
+        }
+      },
     }),
   }),
 });

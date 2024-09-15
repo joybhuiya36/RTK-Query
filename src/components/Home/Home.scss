@@ -1,0 +1,72 @@
+.task {
+  background-color: rgb(31, 41, 54);
+  padding: 30px 40px;
+  border-radius: 10px;
+  min-width: 632px;
+  min-height: 600px;
+
+  &__header {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  &__inputWarapper {
+    .ant-input {
+      border-top-right-radius: unset;
+      border-bottom-right-radius: unset;
+      background-color: transparent;
+      color: white;
+      &:hover,
+      &:focus {
+        border-color: rgb(28, 212, 96);
+      }
+    }
+    .ant-btn {
+      border: unset;
+      border-top-left-radius: unset;
+      border-bottom-left-radius: unset;
+      background-color: rgb(21, 187, 82);
+      color: white;
+      &:hover {
+        background-color: rgb(28, 212, 96) !important;
+        color: white !important;
+      }
+    }
+  }
+  &__error {
+    color: white;
+    font-size: 16px;
+  }
+  &__item {
+    width: 600px;
+    .ant-typography {
+      color: white;
+    }
+  }
+  &__button {
+    width: 25px !important;
+    height: 20px !important;
+    padding: unset;
+    font-size: 11px;
+    font-weight: 600;
+    background-color: rgb(247, 76, 76);
+    color: white;
+    border: unset;
+    &:hover {
+      color: rgb(247, 76, 76) !important;
+    }
+  }
+}
+.ant-spin-dot-holder {
+  color: rgb(21, 187, 82) !important;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: rgb(21, 187, 82);
+  border-color: rgb(21, 187, 82);
+  border-radius: 40%;
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: rgb(28, 212, 96) !important;
+  border-color: rgb(28, 212, 96) !important;
+}
